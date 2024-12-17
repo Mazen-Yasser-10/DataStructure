@@ -23,6 +23,11 @@ public class ECommerceSystem {
         for (Item product : personalized) {
             System.out.println("Personalized: " + product.name);
         }
-
+        System.out.println("------------------------------------------");
+        system.deleteProduct(personalized.get(0));
+        for (Item product : personalized) {
+            System.out.println("Personalized: " + product.name);
+        }
+        system.deleteProduct(personalized.get(0));
     }
 }
