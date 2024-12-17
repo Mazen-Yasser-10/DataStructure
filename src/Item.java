@@ -1,13 +1,11 @@
 class Item implements Comparable<Item> {
     String name;
     double price;
-    double rating;
     String category;
 
-    public Item(String name, double price, double rating, String category) {
+    public Item(String name, double price, String category) {
         this.name = name;
         this.price = price;
-        this.rating = rating;
         this.category = category;
     }
 

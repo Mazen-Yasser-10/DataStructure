@@ -2,10 +2,10 @@ import java.util.*;
 
 class RecommendationSystem {
     private final Map<String, List<Item>> categoryMap = new HashMap<>();
-    private final ProductBST bst = new ProductBST();
+    private final ItemBST bst = new ItemBST();
     private final Map<String, List<Item>> userHistory = new HashMap<>();
 
-    public void addProduct(Item product) {
+    public void addItem(Item product) {
         bst.add(product);
         categoryMap.computeIfAbsent(product.category,
                 k -> new ArrayList<>())
@@ -30,11 +30,14 @@ class RecommendationSystem {
         List<Item> history = userHistory.getOrDefault(userId, Collections.emptyList());
         return new ArrayList<>(history);
     }
-    public void deleteProduct(Item product) {
+    public void deleteItem(Item product) {
         bst.delete(product);
         List<Item> products = categoryMap.get(product.category);
         if (products != null) {
             products.remove(product);
         }
+    }
+    public Item searchItem(Item item) {
+        return bst.search(item);
     }
 }
