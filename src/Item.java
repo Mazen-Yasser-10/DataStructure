@@ -13,4 +13,13 @@ class Item implements Comparable<Item> {
     public int compareTo(Item other) {
         return Double.compare(this.price, other.price);
     }
+
+    @Override
+    public String toString() {
+        return "[" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                ", category='" + category + '\'' +
+                ']';
+    }
 }
