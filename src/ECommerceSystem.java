@@ -35,17 +35,17 @@ public class ECommerceSystem {
                 case "B":
                     System.out.print("Enter item name: ");
                     name = in.nextLine();
-                    if(name.isEmpty()) {
+                    if (name.isEmpty()) {
                         break;
                     }
-                    System.out.print("Enter item price: ");
                     price = getValidPrice(in);
                     in.nextLine();
-                    System.out.println("Enter item category: ");
+                    System.out.print("Enter item category: ");
                     category = in.nextLine();
-                    Item item = new Item(name.toLowerCase(),price,category.toLowerCase());
+                    Item item = new Item(name.toLowerCase(), price, category.toLowerCase());
                     system.deleteItem(item);
                     break;
+
                 case "C":
                     List<Item> products = system.getSortedItems();
                     for (Item p : products) {

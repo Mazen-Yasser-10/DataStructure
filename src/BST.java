@@ -35,9 +35,9 @@ public class BST {
     private Node deleteHelper(Node cur, Item target) {
         if (cur == null) return null;
 
-        if (target.compareTo(cur.item) < 0) {
+        if (target.name.compareTo(cur.item.name) < 0) {
             cur.left = deleteHelper(cur.left, target);
-        } else if (target.compareTo(cur.item) > 0) {
+        } else if (target.name.compareTo(cur.item.name) > 0) {
             cur.right = deleteHelper(cur.right, target);
         } else {
             if (cur.left == null && cur.right == null) {
